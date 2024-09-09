@@ -9,4 +9,9 @@ public class ContaPoupanca extends Conta {
         System.out.println("*** Extrato conta poupança ***");
         super.imprimirInfos();
     }
+
+    public void imprimirExtratoTransacoes(){
+        System.out.println("=== Extrato de transações Conta Poupança ====");
+        super.imprimirExtratoTransacoes();
+    }
 }

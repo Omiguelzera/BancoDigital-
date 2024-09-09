@@ -7,4 +7,9 @@ public class ContaCorrente extends Conta{
         System.out.println("*** Extrato conta corrente ***");
         super.imprimirInfos();
     }
+
+    public void imprimirExtratoTransacoes(){
+        System.out.println("=== Extrato de transações Conta Corrente ===");
+        super.imprimirExtratoTransacoes();
+    }
 }

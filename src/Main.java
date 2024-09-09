@@ -6,10 +6,15 @@ public class Main {
         Conta cp = new ContaPoupanca(cli);
 
         cc.depositar(100);
-        cc.sacar(200);
+        cc.sacar(50);
+        cc.depositar(300);
+        cc.transferir(50, cp);
 
 
         cc.imprimirExtrato();
+        cc.imprimirExtratoTransacoes();
+
+
         cp.imprimirExtrato();
     }
 }
