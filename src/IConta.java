@@ -8,4 +8,8 @@ public interface IConta {
     void imprimirExtrato();
 
     void imprimirExtratoTransacoes();
+
+    double consultarLimiteSaque();
+
+    void definirLimiteSaque(double novoLimite);
 }

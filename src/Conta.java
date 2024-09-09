@@ -11,12 +11,14 @@ public abstract class Conta implements IConta {
     protected int numero;
     protected double saldo;
     protected Cliente cliente;
+    protected double limiteSaque;
 
         public Conta(Cliente cliente){
             this.agencia = Conta.AGENCIA_PADRAO;
             this.numero = SEQUENCIAL++;
             this.cliente = cliente;
             this.historicoTransacao = new ArrayList<>();
+            this.limiteSaque = 1000;
         }
 
     @Override
@@ -47,6 +49,7 @@ public abstract class Conta implements IConta {
             System.out.printf("numero: %d", this.numero);
             System.out.printf("Saldo: %.2f", this.saldo);
             System.out.println("Histórico de Transações:");
+            System.out.printf("Limite de Saque: %.2f%n", this.limiteSaque);
     }
 
     @Override
@@ -56,6 +59,15 @@ public abstract class Conta implements IConta {
         }
     }
 
+    public double consultarLimiteSaque(){
+            return limiteSaque;
+    }
+
+    public void definirLimiteSaque(double novoLimite){
+            if(novoLimite < 0 ) throw new Error("O limite deve ser positivo");
+            this.limiteSaque = novoLimite;
+
+    }
     public int getAgencia() {
         return agencia;
     }
